@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc3rm8gtkglsb"]
+[gd_scene load_steps=7 format=3 uid="uid://bc3rm8gtkglsb"]
 
 [ext_resource type="Script" path="res://CameraController.gd" id="1_camera_script"]
+[ext_resource type="Script" uid="uid://bx701gvh8bout" path="res://MouseCursor.gd" id="2_mouse_script"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1"]
 size = Vector2(50, 50)
@@ -21,6 +22,7 @@ metallic = 0.2
 roughness = 0.6
 
 [node name="Main" type="Node3D"]
+script = ExtResource("2_mouse_script")
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_1")
