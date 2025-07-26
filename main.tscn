@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bc3rm8gtkglsb"]
 
-[ext_resource type="Script" path="res://CameraController.gd" id="1_camera_script"]
+[ext_resource type="Script" uid="uid://c64gyco0t3bq3" path="res://CameraController.gd" id="1_camera_script"]
 [ext_resource type="Script" uid="uid://bx701gvh8bout" path="res://MouseCursor.gd" id="2_mouse_script"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1"]
