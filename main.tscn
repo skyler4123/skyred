@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bc3rm8gtkglsb"]
+[gd_scene load_steps=6 format=3 uid="uid://bc3rm8gtkglsb"]
+
+[ext_resource type="Script" path="res://CameraController.gd" id="1_camera_script"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1"]
 size = Vector2(50, 50)
@@ -10,16 +12,30 @@ albedo_color = Color(0.719992, 0.84283, 0.996088, 1)
 metallic = 0.1
 roughness = 0.8
 
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2"]
+albedo_color = Color(1, 0.2, 0.2, 1)
+metallic = 0.2
+roughness = 0.6
+
 [node name="Main" type="Node3D"]
 
 [node name="Ground" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_1")
 surface_material_override/0 = SubResource("StandardMaterial3D_1")
 
+[node name="DemoObject" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = SubResource("StandardMaterial3D_2")
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 10, 10)
 projection = 1
 fov = 60.0
+script = ExtResource("1_camera_script")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 5, 0)
